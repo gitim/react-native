@@ -117,7 +117,7 @@ var NativeMethodsMixin = {
    * are relative to the origin x, y of the ancestor view.
    *
    * As always, to obtain a native node handle for a component, you can use
-   * `React.findNodeHandle(component)`.
+   * `ReactNative.findNodeHandle(component)`.
    */
   measureLayout: function(
     relativeToNativeNode: number,
