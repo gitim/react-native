@@ -171,6 +171,7 @@ class ExampleNavigator extends Component {
   }
 }
 
+let num = 1;
 class ExampleScene extends Component {
   props: NavigationSceneRendererProps & {
     navigate: Function,
@@ -180,6 +181,17 @@ class ExampleScene extends Component {
     ...NavigationPropTypes.SceneRendererProps,
     navigate: PropTypes.func.isRequired,
   };
+
+  componentDidMount() {
+    if (num !== 3) {
+      setTimeout(() => this.props.navigate('push'), 300);
+      num++;
+    }
+  }
+
+  componentWillUnmount() {
+    num = 1;
+  }
 
   render(): React.Element<any> {
     const {scene, navigate} = this.props;
@@ -222,7 +234,7 @@ class ExampleScene extends Component {
     const width = layout.initWidth;
     const translateX = position.interpolate({
       inputRange,
-      outputRange: ([width, 0, -10]: Array<number>),
+      outputRange: ([width, 0, -100]: Array<number>),
     });
 
     return {
