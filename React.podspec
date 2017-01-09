@@ -34,7 +34,7 @@ Pod::Spec.new do |s|
     ss.dependency      'React/yoga'
     ss.dependency      'React/cxxreact'
     ss.source_files  = "React/**/*.{c,h,m,mm,S}"
-    ss.exclude_files = "**/__tests__/*", "IntegrationTests/*", "React/**/RCTTVView.*", "ReactCommon/yoga/*"
+    ss.exclude_files = "**/__tests__/*", "IntegrationTests/*", "React/**/RCTTVView.*", "ReactCommon/yoga/*", "React/CSSLayout/*"
     ss.frameworks    = "JavaScriptCore"
     ss.libraries     = "stdc++"
   end
